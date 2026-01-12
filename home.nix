@@ -39,7 +39,7 @@
       ga = "git add ";
       gc = "git commit ";
       l = "eza --oneline --long --header --git --icons=auto --all --group-directories-first";
-      nrs = "nixos-rebuild --flake ~/nixos-dotfiles#nixos-btw switch";
+      nrs = "nixos-rebuild switch --impure --flake ~/nixos-dotfiles#nixos-btw";
     };
   };
 

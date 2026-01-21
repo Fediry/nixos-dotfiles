@@ -60,13 +60,6 @@
   programs.firefox.enable = true;
   programs.yazi = {
     enable = true;
-    theme = {
-      flavor = {
-        dark = "catppuccin-theme";
-        light = "catpuccin-theme";
-      };
-    };
-
   };
 
   environment.systemPackages = with pkgs; [

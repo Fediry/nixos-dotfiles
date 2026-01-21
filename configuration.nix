@@ -20,6 +20,8 @@
     clean.extraArgs = "--keep-since 5d -- keep 3";
     flake = "~/nixos-dotfiles";
   };
+
+  # GUI
   services.displayManager.ly.enable = true;
   
   programs.niri.enable = true;
@@ -58,15 +60,9 @@
   ];
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
     nerd-fonts.atkynson-mono
   ];
 
-  # nix.gc = {
-  #   automatic = true;
-  #   dates = "weekly";
-  #   options = "--delete-older-than 7d";
-  # };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
 

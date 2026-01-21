@@ -106,6 +106,20 @@ input {
     position x=1280 y=0
 }
 
+environment {
+    MOZ_ENABLE_WAYLAND "1"
+    XDG_CACHE_DIR "~/.cache/"
+    XCURSOR_THEME "Bibata-Modern-Classic"
+    XCURSOR_SIZE "16"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 16
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout

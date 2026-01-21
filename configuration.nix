@@ -26,7 +26,8 @@
   };
 
   # GUI
-  services.displayManager.ly.enable = true;
+  services.displayManager.lemurs.enable = true;
+  #services.displayManager.ly.enable = true;
 
   programs.niri.enable = true;
   programs.dms-shell = {

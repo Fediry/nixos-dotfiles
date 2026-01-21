@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -23,7 +27,7 @@
 
   # GUI
   services.displayManager.ly.enable = true;
-  
+
   programs.niri.enable = true;
   programs.dms-shell = {
     enable = true;
@@ -44,13 +48,26 @@
 
   users.users.fediry = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "seat" ];
+    extraGroups = [
+      "wheel"
+      "seat"
+    ];
     packages = with pkgs; [
       tree
     ];
   };
 
   programs.firefox.enable = true;
+  programs.yazi = {
+    enable = true;
+    theme = {
+      flavor = {
+        dark = "catppuccin-theme";
+        light = "catpuccin-theme";
+      };
+    };
+
+  };
 
   environment.systemPackages = with pkgs; [
     vim
@@ -63,8 +80,10 @@
     nerd-fonts.atkynson-mono
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   system.stateVersion = "25.11";
 
 }
-

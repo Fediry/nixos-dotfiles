@@ -14,13 +14,13 @@
   networking.networkmanager.enable = true;
   time.timeZone = "America/Los_Angeles";
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 5d -- keep 3";
+    flake = "~/nixos-dotfiles";
+  };
   services.displayManager.ly.enable = true;
-  # services.xserver = {
-  #   enable = true;
-  #   autoRepeatDelay = 200;
-  #   autoRepeatInterval = 35;
-  #   windowManager.qtile.enable = true;
-  # };
   
   programs.niri.enable = true;
   programs.dms-shell = {
